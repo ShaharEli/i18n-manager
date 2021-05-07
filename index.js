@@ -1,9 +1,10 @@
-const { execSync } = require("child_process");
 const { init } = require("./src");
+const { runServer } = require("./src/utils");
+
 const cli = async (allArgs) => {
   const argv = allArgs.slice(2);
   if (!argv.length) {
-    execSync("node ./server/build/index.js", { stdio: "inherit" });
+    runServer();
   }
   switch (argv[0]) {
     case "init":
@@ -11,13 +12,11 @@ const cli = async (allArgs) => {
       break;
     case "-p":
       if (!isNaN(parseInt(argv[1]))) {
-        execSync(`node ./server/build/index.js ${argv[1]}`, {
-          stdio: "inherit",
-        });
+        runServer(argv[1]);
         break;
       }
     default:
-      execSync("node ./server/build/index.js", { stdio: "inherit" });
+      runServer();
   }
 };
 

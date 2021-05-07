@@ -1,3 +1,7 @@
-const confirmArr = ["yes", "y", "Yes"];
+const { execSync } = require("child_process");
 
-module.exports = { confirmArr };
+const confirmArr = ["yes", "y", "Yes"];
+const runServer = (param = "") =>
+  execSync(`node ./server/build/index.js ${param}`, { stdio: "inherit" });
+
+module.exports = { confirmArr, runServer };
