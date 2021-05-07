@@ -1,0 +1,27 @@
+{
+  "name": "i18nm",
+  "version": "1.0.0",
+  "description": "i18n manager",
+  "main": "index.js",
+  "bin": {
+    "@shahar12345/i18nm": "bin/i18nm",
+    "i18nm": "bin/i18nm"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "i18n",
+    "translate",
+    "translations"
+  ],
+  "author": "Shahar Eliyahu",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "inquirer": "^8.0.0",
+    "ora": "^5.4.0"
+  }
+}
