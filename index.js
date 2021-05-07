@@ -9,8 +9,16 @@ const cli = async (allArgs) => {
     case "init":
       init();
       break;
+    case "-p":
+      if (!isNaN(parseInt(argv[1]))) {
+        execSync(`node ./server/build/index.js ${argv[1]}`, {
+          stdio: "inherit",
+        });
+        break;
+      }
+    default:
+      execSync("node ./server/build/index.js", { stdio: "inherit" });
   }
-  //   execSync("node ./server/build/index.js hi", { stdio: "inherit" });
 };
 
 module.exports = { cli };
