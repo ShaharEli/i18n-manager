@@ -25,7 +25,7 @@ const init = async () => {
       },
     ]);
     if (!confirmArr.includes(overwrite)) {
-      console.log("canceling...");
+      console.log("canceling");
       return;
     }
   }
